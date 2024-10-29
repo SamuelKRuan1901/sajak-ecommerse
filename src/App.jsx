@@ -1,10 +1,20 @@
 import { useState } from 'react';
-import './App.css';
+import Header from '@components/Header';
+import MainLayout from '@components/Layout';
+import Footer from '@components/Footer';
 
 function App() {
   const [count, setCount] = useState(0);
 
-  return <div>ecommerse</div>;
+  return (
+    <>
+      <MainLayout>
+        <Header />
+        Content
+        <Footer />
+      </MainLayout>
+    </>
+  );
 }
 
 export default App;
