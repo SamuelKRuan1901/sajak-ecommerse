@@ -1,0 +1,21 @@
+@use '@styles/mixins.module.scss' as *;
+
+.container {
+  background-image: url('../../assets/images/countdown-banner-bg.JPG');
+  background-repeat: none;
+  background-size: cover;
+  width: calc(100% / 2);
+  height: 409px;
+  @include flex_box_custom(center, center, 20px);
+  flex-direction: column;
+}
+
+.containerTimer {
+  @include flex_box_custom(center, center, 20px);
+}
+
+.desc {
+  font-size: 28px;
+  color: #222;
+  margin-bottom: 5px;
+}

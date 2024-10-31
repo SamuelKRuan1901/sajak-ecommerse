@@ -3,7 +3,7 @@
 
 .container {
   @include flex_box_custom(center, center, 0px);
-  background-image: url(../../assets/images/hero-poster-2.png);
+  background-image: url(../../assets/images/hero-poster.png);
   background-size: cover;
   height: 750px;
   background-position: center;
