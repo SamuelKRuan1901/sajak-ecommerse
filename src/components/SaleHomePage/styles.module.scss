@@ -1,0 +1,27 @@
+@use '@styles/mixins.module.scss' as *;
+@use '@styles/variables.module.scss' as *;
+
+.container {
+  margin-top: 100px;
+
+  @include flex_box_custom(space-between, center, 10px);
+
+  .content {
+    @include flex_box_custom(center, center, 10px);
+    flex-direction: column;
+    padding: 0 50px;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 35px;
+    color: $fourth_color;
+    font-weight: 400;
+  }
+
+  .desc {
+    color: $thr_color;
+    font-size: 18px;
+    line-height: 30px;
+  }
+}

@@ -1,0 +1,37 @@
+@use '@styles/variables.module.scss' as *;
+@use '@styles/mixins.module.scss' as *;
+
+.container {
+  background-color: $sub_color;
+  height: 350px;
+  color: $white_color;
+  margin-top: 80px;
+
+  @include flex_box_custom(center, center, 10px);
+  flex-direction: column;
+
+  .NavBox {
+    @include flex_box_custom(center, center, 20px);
+
+    .NavElement {
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+  .payBox {
+    @include flex_box_custom(center, center, 0px);
+    flex-direction: column;
+    margin-bottom: 20px;
+
+    .cardsBox {
+      @include flex_box_custom(center, center, 20px);
+
+      img {
+        width: 55px;
+      }
+    }
+  }
+}
