@@ -4,8 +4,21 @@ import styles from './styles.module.scss';
 import AdvanceHeading from '@components/AdvanceHeading';
 import Info from '@components/Info';
 import HeadingListProduct from '@components/HeadingListProduct';
+import { useEffect, useState } from 'react';
+import { getProducts } from '@/apis/productsService';
+import PopularProducts from '@components/PopularProducts';
 
 const HomePage = () => {
+  const [listProducts, setListProducts] = useState();
+
+  useEffect(() => {
+    getProducts().then((res) => {
+      setListProducts(res.contents);
+    });
+  }, []);
+
+  console.log(listProducts);
+
   return (
     <>
       <div className={styles.container}>
@@ -13,7 +26,8 @@ const HomePage = () => {
         <Hero />
         <Info />
         <AdvanceHeading />
-        <HeadingListProduct />
+        <HeadingListProduct data={listProducts?.slice(0, 2)} />
+        <PopularProducts data={listProducts?.slice(2, 10)} />
       </div>
     </>
   );

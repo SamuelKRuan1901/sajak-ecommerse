@@ -1,14 +1,12 @@
 import MainLayout from '@components/Layout';
 import styles from './styles.module.scss';
-import CountdownBanner from '@components/CountdownBanner';
 import ProductItem from '@components/ProductItem';
 
-const HeadingListProduct = ({ data }) => {
+const PopularProducts = ({ data }) => {
   return (
-    <MainLayout>
-      <div className={styles.container}>
-        <CountdownBanner />
-        <div className={styles.containerItem}>
+    <>
+      <MainLayout>
+        <div className={styles.container}>
           {data?.map((item) => (
             <ProductItem
               key={item.id}
@@ -19,9 +17,9 @@ const HeadingListProduct = ({ data }) => {
             />
           ))}
         </div>
-      </div>
-    </MainLayout>
+      </MainLayout>
+    </>
   );
 };
 
-export default HeadingListProduct;
+export default PopularProducts;

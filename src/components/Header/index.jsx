@@ -5,7 +5,7 @@ import Menu from './Menu';
 import rotateIcon from '@icons/rotateicon.svg';
 import heartIcon from '@icons/hearticon.svg';
 import cartIcon from '@icons/carticon.svg';
-import BOxIcon from '@components/Header/BoxIcon';
+import BoxIcon from '@components/Header/BoxIcon';
 
 const Header = () => {
   return (
@@ -14,7 +14,7 @@ const Header = () => {
         <div className={styles.containerBox}>
           <div className={styles.containerBoxIcon}>
             {dataBoxIcon.map((item) => (
-              <BOxIcon type={item.type} href={item.href} />
+              <BoxIcon type={item.type} href={item.href} />
             ))}
           </div>
           <div className={styles.containerMenu}>
