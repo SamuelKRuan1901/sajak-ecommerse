@@ -7,8 +7,13 @@ const Info = () => {
   return (
     <MainLayout>
       <div className={styles.container}>
-        {dataInfo.map((item) => (
-          <InfoCard content={item.title} desc={item.desc} src={item.src} />
+        {dataInfo.map((item, index) => (
+          <InfoCard
+            key={index}
+            content={item.title}
+            desc={item.desc}
+            src={item.src}
+          />
         ))}
       </div>
     </MainLayout>

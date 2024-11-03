@@ -1,0 +1,31 @@
+.container {
+  padding: 30px 20px 0 20px;
+
+  .title {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .rememberme {
+    margin-bottom: 30px;
+
+    input {
+      margin-right: 10px;
+    }
+    span {
+      font-size: 14px;
+    }
+  }
+
+  .lostPW {
+    margin-top: 20px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 14px;
+    &:hover {
+      color: #aea9a9;
+    }
+  }
+}

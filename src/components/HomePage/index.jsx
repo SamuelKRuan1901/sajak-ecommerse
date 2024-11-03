@@ -19,8 +19,6 @@ const HomePage = () => {
     });
   }, []);
 
-  console.log(listProducts);
-
   return (
     <>
       <div className={styles.container}>

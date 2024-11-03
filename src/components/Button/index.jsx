@@ -3,7 +3,7 @@ import styles from './styles.module.scss';
 
 const Button = ({ content }) => {
   return (
-    <div>
+    <div className={styles.container}>
       <button className={styles.btn}>{content}</button>
     </div>
   );

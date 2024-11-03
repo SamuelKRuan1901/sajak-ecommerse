@@ -1,0 +1,12 @@
+import { lazy } from 'react';
+
+export const routers = [
+  {
+    path: '/',
+    component: lazy(() => import('@components/HomePage'))
+  },
+  {
+    path: '/blog',
+    component: lazy(() => import('@components/Blog'))
+  }
+];

@@ -11,8 +11,10 @@ const Footer = () => {
     <div className={styles.container}>
       <h1>SajaK.</h1>
       <div className={styles.NavBox}>
-        {dataMenu.map((item) => (
-          <div className={styles.NavElement}>{item.content}</div>
+        {dataMenu.map((item, index) => (
+          <div key={index} className={styles.NavElement}>
+            {item.content}
+          </div>
         ))}
       </div>
       <div className={styles.payBox}>

@@ -1,0 +1,32 @@
+@use '@styles/variables.module.scss' as *;
+
+.container {
+  margin-bottom: 20px;
+  .lableInput {
+    font-size: 14px;
+    color: $fourth_color;
+    margin-bottom: 5px;
+
+    span {
+      color: red;
+    }
+  }
+  .boxInput {
+    width: 90%;
+    position: relative;
+
+    input {
+      width: 100%;
+      border: 1px solid #e1e1e1;
+      outline: none;
+      padding: 10px 30px 10px 10px;
+    }
+
+    .boxIcon {
+      position: absolute;
+      top: 12px;
+      right: -30px;
+      cursor: pointer;
+    }
+  }
+}

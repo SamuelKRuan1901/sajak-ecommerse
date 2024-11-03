@@ -1,6 +1,11 @@
 @use '@styles/mixins.module.scss' as *;
 @use '@styles/variables.module.scss' as *;
 
+.container {
+  width: 100%;
+  @include flex_box_custom(center, center, 0px);
+}
+
 .btn {
   @include btn(176px, 42px, $primary_color, 3px);
   color: $white_color;

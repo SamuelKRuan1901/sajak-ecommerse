@@ -1,10 +1,27 @@
-import HomePage from '@components/HomePage';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { routers } from '@/routers/routers';
+import { Suspense } from 'react';
+import { SideBarProvider } from '@/context/SideBarProvider';
+import SideBar from '@components/SideBar';
 
 function App() {
   return (
-    <>
-      <HomePage />
-    </>
+    <SideBarProvider>
+      <SideBar />
+      <BrowserRouter>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+            {routers.map((item, index) => (
+              <Route
+                key={index}
+                path={item.path}
+                element={<item.component />}
+              />
+            ))}
+          </Routes>
+        </Suspense>
+      </BrowserRouter>
+    </SideBarProvider>
   );
 }
 
