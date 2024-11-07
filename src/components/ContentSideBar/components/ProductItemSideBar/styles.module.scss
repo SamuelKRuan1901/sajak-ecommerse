@@ -1,0 +1,64 @@
+@use '@styles/mixins.module.scss' as *;
+@use '@styles/variables.module.scss' as *;
+
+.container {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 4px;
+  position: relative;
+  @include flex_box_custom(center, flex-start, 25px);
+  transition: all 0.3s ease;
+
+  img {
+    width: 70px;
+  }
+
+  .boxContent {
+    @include flex_box_custom(center, flex-start, 15px);
+    flex-direction: column;
+
+    .title {
+      font-size: 16px;
+      color: $primary_color;
+    }
+    .size {
+      font-size: 12px;
+      color: $thr_color;
+      background-color: #eaeae1;
+      font-weight: 400;
+    }
+
+    .price {
+      font-size: 14px;
+      color: $thr_color;
+    }
+    .sku {
+      font-size: 10px;
+      color: $thr_color;
+    }
+  }
+
+  &:hover {
+    background-color: #d8d8d3;
+
+    .closeIcon {
+      transform: translateX(-50px);
+      transition: all 0.3s ease;
+    }
+  }
+
+  .closeIcon {
+    width: 25px;
+    height: 25px;
+    @include flex_box_custom(center, center, 0);
+    position: absolute;
+    top: 8px;
+    right: -45px;
+    background-color: #b4b4ae;
+    border-radius: 50px;
+    cursor: pointer;
+    &:hover {
+      background-color: #e0e0d9;
+    }
+  }
+}

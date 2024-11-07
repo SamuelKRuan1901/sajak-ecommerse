@@ -1,0 +1,23 @@
+@use '@styles/mixins.module.scss' as *;
+@use '@styles/variables.module.scss' as *;
+
+.container {
+  padding: 30px 20px;
+  @include flex_box_custom(space-between, space-between, 0px);
+  height: 90vh;
+  flex-direction: column;
+
+  .boxContent {
+    width: 100%;
+  }
+  .boxBtn {
+    @include flex_box_custom(center, center, 10px);
+    flex-direction: column;
+
+    .total {
+      @include flex_box_custom(space-between, center);
+      width: 100%;
+      color: $thr_color;
+    }
+  }
+}

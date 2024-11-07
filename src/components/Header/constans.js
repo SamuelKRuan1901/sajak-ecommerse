@@ -10,5 +10,5 @@ export const dataMenu = [
   { content: 'About Us', href: '#' },
   { content: 'Contact', href: '#' },
   { content: 'Search', href: '#' },
-  { content: 'Login', href: '#' }
+  { content: 'Sign in', href: '#' }
 ];
