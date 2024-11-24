@@ -26,7 +26,7 @@ const ProductItem = ({ src, preSrc, name, price }) => {
         </div>
       </div>
       <div className={styles.title}>{name}</div>
-      <div className={styles.price}>${price}</div>
+      <div className={styles.price}>{price}</div>
     </div>
   );
 };

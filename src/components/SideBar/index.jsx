@@ -15,8 +15,6 @@ const SideBar = () => {
     setIsOpen(!isOpen);
   };
 
-  console.log(type);
-
   const handleRenderComponents = () => {
     switch (type) {
       case 'login':

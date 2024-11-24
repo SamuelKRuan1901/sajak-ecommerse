@@ -3,10 +3,15 @@ import styles from './styles.module.scss';
 import Button from '@components/Button';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { ToastContext } from '@/contexts/ToastProvider';
+import { register, signIn, getInfo } from '@/apis/authService';
+import Cookies from 'js-cookie';
 
 const Login = () => {
   const [isRegister, setIsRegister] = useState(false);
+  const { toast } = useContext(ToastContext);
+  const [isLoading, setIsLoading] = useState(false);
 
   const formik = useFormik({
     initialValues: {
@@ -23,11 +28,47 @@ const Login = () => {
         'Password does not match'
       )
     }),
-    onSubmit: (values) => {
-      console.log(values);
+    onSubmit: async (values) => {
+      if (isLoading) return;
+      const { email, password } = values;
+      if (isRegister) {
+        setIsLoading(true);
+        await register({
+          email,
+          password
+        })
+          .then((res) => {
+            toast.success(res.data.msg);
+            setIsLoading(false);
+          })
+          .catch((error) => {
+            toast.error(error.response.data.msg);
+            setIsLoading(false);
+          });
+      }
+      if (!isRegister) {
+        setIsLoading(true);
+        await signIn({
+          email,
+          password
+        })
+          .then((res) => {
+            if (res) {
+              Cookies.set('userId', res.data.id);
+              Cookies.set('token', res.data.token);
+              toast.success('Logged In');
+              setIsLoading(false);
+            }
+          })
+          .catch((error) => {
+            if (error.status === 401) {
+              toast.error(error.response.data.msg);
+              setIsLoading(false);
+            }
+          });
+      }
     }
   });
-
   return (
     <div className={styles.container}>
       <div className={styles.title}>{isRegister ? 'REGISTER' : 'LOGIN'}</div>
@@ -36,6 +77,7 @@ const Login = () => {
           lable={'Email'}
           type={'text'}
           id={'email'}
+          name={'email'}
           isRequire
           formik={formik}
         />
@@ -43,6 +85,7 @@ const Login = () => {
           lable={'Password'}
           type={'password'}
           id={'password'}
+          name={'password'}
           isRequire
           formik={formik}
         />
@@ -51,6 +94,7 @@ const Login = () => {
             lable={'Comfirm Password'}
             type={'password'}
             id={'CFpassword'}
+            name={'CFpassword'}
             isRequire
             formik={formik}
           />
@@ -61,7 +105,11 @@ const Login = () => {
             <span>Remenber me</span>
           </div>
         )}
-        <Button content={isRegister ? 'REGISTER' : 'LOGIN'} type={'submit'} />
+        <Button
+          content={isLoading ? 'LOADING...' : isRegister ? 'REGISTER' : 'LOGIN'}
+          type={'submit'}
+          // onClick={() => toast.success('Success')}
+        />
       </form>
       <div className={styles.lostPW}>Lost your Password</div>
       <div className={styles.lostPW} onClick={() => setIsRegister(!isRegister)}>

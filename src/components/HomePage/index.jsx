@@ -11,12 +11,14 @@ import SaleHomePage from '@components/SaleHomePage';
 import Footer from '@components/Footer';
 
 const HomePage = () => {
-  const [listProducts, setListProducts] = useState();
+  const [listProducts, setListProducts] = useState(null);
 
   useEffect(() => {
-    getProducts().then((res) => {
-      setListProducts(res.contents);
-    });
+    const fetchData = async () => {
+      const response = await getProducts();
+      setListProducts(response);
+    };
+    fetchData();
   }, []);
 
   return (
