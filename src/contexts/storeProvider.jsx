@@ -6,7 +6,14 @@ export const StoreContext = createContext();
 
 export const StoreProvider = ({ children }) => {
   const [userInfo, setUserInfo] = useState(null);
-  const userId = Cookies.get('userId');
+  const [userId, setUserId] = useState(Cookies.get('userId'));
+
+  const values = {
+    userInfo,
+    setUserInfo,
+    userId,
+    setUserId
+  };
 
   useEffect(() => {
     try {
@@ -14,7 +21,6 @@ export const StoreProvider = ({ children }) => {
         getInfo(userId)
           .then((res) => {
             setUserInfo(res.data);
-            console.log(userInfo);
           })
           .catch((err) => {
             console.log(err);
@@ -26,6 +32,6 @@ export const StoreProvider = ({ children }) => {
   }, [userId]);
 
   return (
-    <StoreContext.Provider value={userInfo}>{children}</StoreContext.Provider>
+    <StoreContext.Provider value={values}>{children}</StoreContext.Provider>
   );
 };

@@ -1,16 +1,16 @@
-import { useContext, useState, useEffect } from 'react';
+import { useContext, useState } from 'react';
 import styles from '../styles.module.scss';
-import { SideBarContext } from '@/contexts/SideBarProvider';
-import { getInfo } from '@/apis/authService';
+import { SideBarContext } from '@contexts/SideBarProvider';
 import Cookies from 'js-cookie';
+import { StoreContext } from '@contexts/storeProvider';
+import { useNavigate } from 'react-router-dom';
 
 const Menu = ({ content, href }) => {
   const { setIsOpen, setType } = useContext(SideBarContext);
-  const [userInfo, setUserInfo] = useState(null);
   const [isShowSubMenu, setIsShowSubMenu] = useState(false);
-  const userId = Cookies.get('userId');
+  const { userInfo, setUserInfo } = useContext(StoreContext);
+  const navigate = useNavigate();
 
-  console.log(userInfo);
   const handleShowProfile = (content) => {
     if (content === 'Sign in' && userInfo) {
       return `Hello ${userInfo.email}`;
@@ -30,6 +30,10 @@ const Menu = ({ content, href }) => {
       setIsOpen(true);
       setType('login');
     }
+
+    if (content === 'Our Shop') {
+      navigate('/shop');
+    }
   };
 
   const handleLogingOut = () => {
@@ -39,18 +43,6 @@ const Menu = ({ content, href }) => {
     setUserInfo(null);
     window.location.reload();
   };
-
-  useEffect(() => {
-    if (userId) {
-      getInfo(userId)
-        .then((res) => {
-          setUserInfo(res.data);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }
-  }, [userId]);
 
   return (
     <div

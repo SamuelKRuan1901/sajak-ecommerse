@@ -8,5 +8,9 @@ export const routers = [
   {
     path: '/blog',
     component: lazy(() => import('@components/Blog'))
+  },
+  {
+    path: '/shop',
+    component: lazy(() => import('@pages/OurShop'))
   }
 ];

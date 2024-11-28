@@ -3,15 +3,19 @@ import styles from './styles.module.scss';
 import Button from '@components/Button';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { useContext, useEffect, useState } from 'react';
-import { ToastContext } from '@/contexts/ToastProvider';
+import { useContext, useState } from 'react';
+import { ToastContext } from '@contexts/ToastProvider';
 import { register, signIn, getInfo } from '@/apis/authService';
 import Cookies from 'js-cookie';
+import { SideBarContext } from '@contexts/SideBarProvider';
+import { StoreContext } from '@contexts/storeProvider';
 
 const Login = () => {
   const [isRegister, setIsRegister] = useState(false);
   const { toast } = useContext(ToastContext);
   const [isLoading, setIsLoading] = useState(false);
+  const { setIsOpen } = useContext(SideBarContext);
+  const { setUserId } = useContext(StoreContext);
 
   const formik = useFormik({
     initialValues: {
@@ -58,6 +62,8 @@ const Login = () => {
               Cookies.set('token', res.data.token);
               toast.success('Logged In');
               setIsLoading(false);
+              setIsOpen(false);
+              setUserId(res.data.id);
             }
           })
           .catch((error) => {
