@@ -14,8 +14,8 @@ const Login = () => {
   const [isRegister, setIsRegister] = useState(false);
   const { toast } = useContext(ToastContext);
   const [isLoading, setIsLoading] = useState(false);
-  const { setIsOpen } = useContext(SideBarContext);
-  const { setUserId } = useContext(StoreContext);
+  const { setIsOpen, handleGetProductsList } = useContext(SideBarContext);
+  const { setUserId, userId } = useContext(StoreContext);
 
   const formik = useFormik({
     initialValues: {
@@ -64,6 +64,7 @@ const Login = () => {
               setIsLoading(false);
               setIsOpen(false);
               setUserId(res.data.id);
+              handleGetProductsList(userId, 'shoppingCart');
             }
           })
           .catch((error) => {

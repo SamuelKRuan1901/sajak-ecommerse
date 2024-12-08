@@ -6,6 +6,7 @@ import Banner from '@pages/OurShop/components/Banner';
 import { OurShopProvider } from '@/contexts/OurShopProvider';
 import Filter from '@pages/OurShop/components/Filter';
 import ProductsList from '@pages/OurShop/components/ProductsList';
+import Footer from '@components/Footer';
 
 const OurShop = () => {
   const navigate = useNavigate();
@@ -33,6 +34,7 @@ const OurShop = () => {
           <ProductsList />
         </div>
       </MainLayout>
+      <Footer />
     </OurShopProvider>
   );
 };

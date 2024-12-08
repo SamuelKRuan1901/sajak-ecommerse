@@ -8,6 +8,8 @@
 
   .boxContent {
     width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
   .boxBtn {
     @include flex_box_custom(center, center, 10px);

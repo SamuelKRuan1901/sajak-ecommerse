@@ -68,3 +68,40 @@
   color: $thr_color;
   margin: 6px 0;
 }
+
+.sizeContainer {
+  @include flex_box_custom(center, center, 10px);
+  flex-direction: column;
+  .sizeBox {
+    @include flex_box_custom(center, center, 10px);
+
+    .sizeIcon {
+      @include flex_box_custom(center, center, 0px);
+      border: solid 2px #757575;
+      color: #757575;
+      border-radius: 2px;
+      width: 20px;
+      cursor: pointer;
+
+      &:hover {
+        border: solid 2px #201f1f;
+        color: #201f1f;
+      }
+    }
+
+    .clearBtn {
+      color: #757575;
+      font-size: 14px;
+      cursor: pointer;
+
+      &:hover {
+        color: #201f1f;
+      }
+    }
+  }
+
+  .isActiveSize {
+    border: solid 2px #201f1f !important;
+    color: #201f1f !important;
+  }
+}

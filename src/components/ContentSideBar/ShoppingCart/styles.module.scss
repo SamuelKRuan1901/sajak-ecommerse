@@ -6,14 +6,17 @@
   @include flex_box_custom(space-between, space-between, 0px);
   height: 90vh;
   flex-direction: column;
+  position: relative;
 
   .boxContent {
     width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
   .boxBtn {
     @include flex_box_custom(center, center, 10px);
     flex-direction: column;
-
+    margin-top: 10px;
     .total {
       @include flex_box_custom(space-between, center);
       width: 100%;

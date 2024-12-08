@@ -10,16 +10,34 @@ import { useScrollHandling } from '@/hooks/useScrollHandling';
 import classNames from 'classnames';
 import { useContext } from 'react';
 import { SideBarContext } from '@contexts/SideBarProvider';
+import Cookies from 'js-cookie';
 
 const Header = () => {
   const { scrollPosition } = useScrollHandling();
   const [fixedPostion, setFixedPostion] = useState(false);
+  const userId = Cookies.get('userId');
 
-  const { setIsOpen, setType } = useContext(SideBarContext);
+  const {
+    setIsOpen,
+    setType,
+    cartProductList,
+    compareProductList,
+    wishlistProductList,
+    handleGetProductsList
+  } = useContext(SideBarContext);
 
   const handleOpenSideBar = (type) => {
     setIsOpen(true);
     setType(type);
+    if (userId && type === 'shoppingCart') {
+      handleGetProductsList(userId, 'shoppingCart');
+    }
+    if (userId && type === 'compare') {
+      handleGetProductsList(userId, 'compare');
+    }
+    if (userId && type === 'wishlist') {
+      handleGetProductsList(userId, 'wishlist');
+    }
   };
 
   useEffect(() => {
@@ -55,18 +73,29 @@ const Header = () => {
             ))}
           </div>
           <div className={styles.containerBoxIcon}>
-            <TfiReload
-              style={{ fontSize: '20px', cursor: 'pointer' }}
-              onClick={() => handleOpenSideBar('compare')}
-            />
-            <BsHeart
-              style={{ fontSize: '20px', cursor: 'pointer' }}
-              onClick={() => handleOpenSideBar('wishlist')}
-            />
-            <PiShoppingBagLight
-              style={{ fontSize: '28px', cursor: 'pointer' }}
-              onClick={() => handleOpenSideBar('shoppingCart')}
-            />
+            <div className={styles.BoxCart}>
+              <TfiReload
+                style={{ fontSize: '20px', cursor: 'pointer' }}
+                onClick={() => handleOpenSideBar('compare')}
+              />
+              <div className={styles.quantity}>{compareProductList.length}</div>
+            </div>
+            <div className={styles.BoxCart}>
+              <BsHeart
+                style={{ fontSize: '20px', cursor: 'pointer' }}
+                onClick={() => handleOpenSideBar('wishlist')}
+              />
+              <div className={styles.quantity}>
+                {wishlistProductList.length}
+              </div>
+            </div>
+            <div className={styles.BoxCart}>
+              <PiShoppingBagLight
+                style={{ fontSize: '28px', cursor: 'pointer' }}
+                onClick={() => handleOpenSideBar('shoppingCart')}
+              />
+              <div className={styles.quantity}>{cartProductList.length}</div>
+            </div>
           </div>
         </div>
       </div>

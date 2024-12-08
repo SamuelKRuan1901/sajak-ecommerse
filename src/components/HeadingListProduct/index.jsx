@@ -11,6 +11,7 @@ const HeadingListProduct = ({ data }) => {
         <div className={styles.containerItem}>
           {data?.map((item) => (
             <ProductItem
+              productId={item.id}
               key={item.id}
               src={item.image1}
               preSrc={item.image2}

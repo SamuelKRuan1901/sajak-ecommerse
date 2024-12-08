@@ -87,7 +87,7 @@
   .productItemContainer {
     @include flex_box_custom(space-between, center, 20px);
     flex-direction: column;
-    background-color: #e1e1e1;
+    background-color: #eae9e9;
     padding: 3px 3px 10px 3px;
     border-radius: 5px;
   }
