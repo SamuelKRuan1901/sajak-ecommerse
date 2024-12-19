@@ -10,6 +10,7 @@ export const SideBarProvider = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [type, setType] = useState('');
   const [cartProductList, setCartProductList] = useState([]);
+  const [viewProduct, setViewProduct] = useState();
   const [compareProductList, setCompareProductList] = useState([]);
   const [wishlistProductList, setWishlistProductList] = useState([]);
   const userId = Cookies.get('userId');
@@ -51,6 +52,8 @@ export const SideBarProvider = ({ children }) => {
     setIsOpen,
     type,
     setType,
+    setViewProduct,
+    viewProduct,
     handleGetProductsList,
     cartProductList,
     compareProductList,

@@ -5,16 +5,18 @@ import ProductItemSideBar from '@components/ContentSideBar/components/ProductIte
 import Button from '@components/Button';
 import { useContext } from 'react';
 import { SideBarContext } from '@contexts/SideBarProvider';
+import { useNavigate } from 'react-router-dom';
 
 const ShoppingCart = () => {
-  const { cartProductList } = useContext(SideBarContext);
-  console.log(cartProductList);
-
+  const { cartProductList, setIsOpen } = useContext(SideBarContext);
+  const navigate = useNavigate();
   const subtotal = cartProductList.reduce((acc, item) => {
     return acc + item.price;
   }, 0);
-
-  console.log(subtotal);
+  const handleNavigateToCart = () => {
+    navigate('/cart');
+    setIsOpen(false);
+  };
 
   return (
     <div className={styles.container}>
@@ -28,7 +30,7 @@ const ShoppingCart = () => {
             key={item.cart_id}
             Id={item.cart_id}
             name={item.name}
-            size={item.size}
+            size={item.product_size}
             price={item.price}
             img={item.image1}
           />
@@ -39,7 +41,7 @@ const ShoppingCart = () => {
           <span>SUBTOTAL</span>
           <span>${subtotal}</span>
         </div>
-        <Button content={'View Cart'} />
+        <Button content={'View Cart'} onClick={handleNavigateToCart} />
         <Button content={'Checkout'} />
       </div>
     </div>

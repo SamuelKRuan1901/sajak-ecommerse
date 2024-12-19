@@ -1,8 +1,8 @@
 import styles from './styles.module.scss';
-import rotateIcon from '@icons/rotateicon.svg';
-import heartIcon from '@icons/hearticon.svg';
-import cartIcon from '@icons/carticon.svg';
-import boxIcon from '@icons/boxicon.svg';
+import rotateIcon from '@icons/rotateIcon.svg';
+import heartIcon from '@icons/heartIcon.svg';
+import { IoMdEye } from 'react-icons/io';
+import boxIcon from '@icons/boxIcon.svg';
 import Button from '@components/Button';
 import { useContext, useState } from 'react';
 import cls from 'classnames';
@@ -20,16 +20,35 @@ const ProductItem = ({
   name,
   price,
   isHomepage = true,
-  sizes
+  sizes,
+  desc,
+  materials
 }) => {
   const [chooseSize, setChooseSize] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const { setIsOpen, setType, handleGetProductsList } =
+  const { setIsOpen, setType, setViewProduct, handleGetProductsList } =
     useContext(SideBarContext);
+
   const { toast } = useContext(ToastContext);
   const userId = Cookies.get('userId');
   const handleChooseSize = (size) => {
     setChooseSize(size);
+  };
+
+  const handleViewProduct = async () => {
+    setIsOpen(true);
+    setType('viewProduct');
+    const data = {
+      productId,
+      src,
+      preSrc,
+      name,
+      price,
+      sizes,
+      desc,
+      materials
+    };
+    setViewProduct(data);
   };
 
   const handleAddToCart = async () => {
@@ -143,8 +162,8 @@ const ProductItem = ({
           <div className={styles.boxIcon} onClick={handleAddToCompare}>
             <img src={rotateIcon} alt='rotateIcon' />
           </div>
-          <div className={styles.boxIcon} onClick={handleAddToCart}>
-            <img src={cartIcon} alt='cartIcon' />
+          <div className={styles.boxIcon} onClick={handleViewProduct}>
+            <IoMdEye style={{ fontSize: '20px' }} />
           </div>
         </div>
       </div>

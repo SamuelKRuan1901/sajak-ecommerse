@@ -11,5 +11,4 @@ const getShopProducts = async (query) => {
   return res.data;
 };
 
-export { getProducts };
-export { getShopProducts };
+export { getProducts, getShopProducts };

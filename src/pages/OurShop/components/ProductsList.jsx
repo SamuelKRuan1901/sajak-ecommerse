@@ -18,6 +18,8 @@ const ProductsList = () => {
     setShowBtn(false);
   };
 
+  console.log(products);
+
   return (
     <>
       <MainLayout>
@@ -32,6 +34,8 @@ const ProductsList = () => {
                 price={item.price}
                 sizes={sizes}
                 isHomepage={false}
+                desc={item.description}
+                materials={item.materials}
               />
             </div>
           ))}

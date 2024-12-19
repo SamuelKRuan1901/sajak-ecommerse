@@ -7,6 +7,7 @@ import Login from '@components/ContentSideBar/Login';
 import Compare from '@components/ContentSideBar/Compare';
 import Wishlist from '@components/ContentSideBar/Wishlist';
 import ShoppingCart from '@components/ContentSideBar/ShoppingCart';
+import ViewProduct from '@components/ContentSideBar/ViewProduct';
 
 const SideBar = () => {
   const { isOpen, setIsOpen, type } = useContext(SideBarContext);
@@ -25,6 +26,8 @@ const SideBar = () => {
         return <Wishlist />;
       case 'shoppingCart':
         return <ShoppingCart />;
+      case 'viewProduct':
+        return <ViewProduct />;
       default:
         return <Login />;
     }

@@ -11,7 +11,6 @@ const ProductItemSideBar = ({ name, size, price, img, Id }) => {
   const handleDeleteFromCard = async () => {
     switch (type) {
       case 'shoppingCart':
-        console.log(Id);
         await deleteProductCart(Id)
           .then((res) => {
             console.log(res);
@@ -22,7 +21,6 @@ const ProductItemSideBar = ({ name, size, price, img, Id }) => {
         await handleGetProductsList(userId, 'shoppingCart');
         break;
       case 'compare':
-        console.log(Id);
         await deleteProductCompare(Id)
           .then((res) => {
             console.log(res);
@@ -33,7 +31,6 @@ const ProductItemSideBar = ({ name, size, price, img, Id }) => {
         await handleGetProductsList(userId, 'compare');
         break;
       case 'wishlist':
-        console.log(Id);
         await deleteProductWishlist(Id)
           .then((res) => {
             console.log(res);
