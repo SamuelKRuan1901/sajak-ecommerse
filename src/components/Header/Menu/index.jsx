@@ -1,8 +1,8 @@
 import { useContext, useState } from 'react';
 import styles from '../styles.module.scss';
-import { SideBarContext } from '@contexts/SideBarProvider';
+import { SideBarContext } from '@/contexts/SideBarProvider';
 import Cookies from 'js-cookie';
-import { StoreContext } from '@contexts/storeProvider';
+import { StoreContext } from '@/contexts/storeProvider';
 import { useNavigate } from 'react-router-dom';
 
 const Menu = ({ content, href }) => {

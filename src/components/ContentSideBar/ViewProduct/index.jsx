@@ -2,9 +2,9 @@ import React, { useContext, useState } from 'react';
 import styles from './styles.module.scss';
 import Button from '@components/Button';
 import cls from 'classnames';
-import { SideBarContext } from '@contexts/SideBarProvider';
+import { SideBarContext } from '@/contexts/SideBarProvider';
 import { addProductToCart } from '@/apis/cartService';
-import { ToastContext } from '@contexts/ToastProvider';
+import { ToastContext } from '@/contexts/ToastProvider';
 
 const ViewProduct = () => {
   const { viewProduct, userId, setIsOpen, setType, handleGetProductsList } =

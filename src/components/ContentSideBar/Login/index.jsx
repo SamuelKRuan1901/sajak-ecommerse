@@ -4,11 +4,11 @@ import Button from '@components/Button';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useContext, useState } from 'react';
-import { ToastContext } from '@contexts/ToastProvider';
+import { ToastContext } from '@/contexts/ToastProvider';
 import { register, signIn, getInfo } from '@/apis/authService';
 import Cookies from 'js-cookie';
-import { SideBarContext } from '@contexts/SideBarProvider';
-import { StoreContext } from '@contexts/storeProvider';
+import { SideBarContext } from '@/contexts/SideBarProvider';
+import { StoreContext } from '@/contexts/storeProvider';
 
 const Login = () => {
   const [isRegister, setIsRegister] = useState(false);

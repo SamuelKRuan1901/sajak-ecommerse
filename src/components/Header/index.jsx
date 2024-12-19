@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { dataBoxIcon, dataMenu } from './constans';
+import { dataBoxIcon, dataMenu } from './constants';
 import styles from './styles.module.scss';
 import Menu from './Menu';
 import { TfiReload } from 'react-icons/tfi';
@@ -9,12 +9,12 @@ import BoxIcon from '@components/Header/BoxIcon';
 import { useScrollHandling } from '@/hooks/useScrollHandling';
 import classNames from 'classnames';
 import { useContext } from 'react';
-import { SideBarContext } from '@contexts/SideBarProvider';
+import { SideBarContext } from '@/contexts/SideBarProvider';
 import Cookies from 'js-cookie';
 
 const Header = () => {
   const { scrollPosition } = useScrollHandling();
-  const [fixedPostion, setFixedPostion] = useState(false);
+  const [fixedPosition, setFixedPosition] = useState(false);
   const userId = Cookies.get('userId');
 
   const {
@@ -41,13 +41,13 @@ const Header = () => {
   };
 
   useEffect(() => {
-    setFixedPostion(scrollPosition > 80 ? true : false);
+    setFixedPosition(scrollPosition > 80 ? true : false);
   }, [scrollPosition]);
 
   return (
     <div
       className={classNames(styles.container, styles.topHeader, {
-        [styles.fixedHeader]: fixedPostion
+        [styles.fixedHeader]: fixedPosition
       })}
     >
       <div className={styles.containerHeader}>

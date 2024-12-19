@@ -1,6 +1,6 @@
 import styles from '../styles.module.scss';
 
-import { OurShopContext } from '@contexts/OurShopProvider';
+import { OurShopContext } from '@/contexts/OurShopProvider';
 import { useContext } from 'react';
 import SelectBox from '@pages/OurShop/components/SelectBox';
 

@@ -5,8 +5,7 @@
       "@components/*": ["src/components/*"],
       "@assets/*": ["src/assets/*"],
       "@icons/*": ["src/assets/icons/*"],
-      "@pages/*": ["src/pages"],
-      "@contexts/*": ["src/contexts"]
+      "@pages/*": ["src/pages"]
     }
   },
   "include": ["src/**/*"]
