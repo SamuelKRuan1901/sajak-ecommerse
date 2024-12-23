@@ -4,8 +4,8 @@ import styles from './styles.module.scss';
 import ProductItemSideBar from '@components/ContentSideBar/components/ProductItemSideBar';
 import Button from '@components/Button';
 import { useContext, useState } from 'react';
-import { SideBarContext } from '@/contexts/SideBarProvider';
-import { ToastContext } from '@/contexts/ToastProvider';
+import { SideBarContext } from '@contexts/SideBarProvider';
+import { ToastContext } from '@contexts/ToastProvider';
 import Cookies from 'js-cookie';
 import { moveWishlistProductsToCart } from '@/apis/wishlistService';
 
