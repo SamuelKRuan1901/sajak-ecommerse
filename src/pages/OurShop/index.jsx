@@ -3,7 +3,7 @@ import MainLayout from '@components/Layout';
 import styles from './styles.module.scss';
 import { useNavigate } from 'react-router-dom';
 import Banner from '@pages/OurShop/components/Banner';
-import { OurShopProvider } from '@/contexts/OurShopProvider';
+import { OurShopProvider } from '@contexts/OurShopProvider';
 import Filter from '@pages/OurShop/components/Filter';
 import ProductsList from '@pages/OurShop/components/ProductsList';
 import Footer from '@components/Footer';
@@ -24,7 +24,7 @@ const OurShop = () => {
               Home {'>'} <span className={styles.specialText}>Shop</span>
             </div>
             <div className={styles.btnBack} onClick={handleBackPrevious}>
-              {'<'} Return to previos page
+              {'<'} Return to previous page
             </div>
           </div>
         </div>

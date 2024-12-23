@@ -2,7 +2,7 @@ import CartProductItem from '@pages/Cart/components/CartProductItem';
 import styles from '../styles.module.scss';
 import CheckoutBox from '@pages/Cart/components/CheckoutBox';
 import { useContext } from 'react';
-import { SideBarContext } from '@/contexts/SideBarProvider';
+import { SideBarContext } from '@contexts/SideBarProvider';
 
 const Content = () => {
   const { cartProductList } = useContext(SideBarContext);
@@ -19,7 +19,6 @@ const Content = () => {
                 name={item.name}
                 price={item.price}
                 size={item.product_size}
-                quantity={1}
               />
             ))}
           </div>

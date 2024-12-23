@@ -7,18 +7,19 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src'),
-      '@components': path.resolve(__dirname, 'src/components'),
-      '@styles': path.resolve(__dirname, 'src/assets/styles'),
-      '@icons': path.resolve(__dirname, 'src/assets/icons'),
-      '@images': path.resolve(__dirname, 'src/assets/images'),
-      '@pages': path.resolve(__dirname, 'src/pages')
+      '@': path.resolve(__dirname, './src'),
+      '@components': path.resolve(__dirname, './src/components'),
+      '@styles': path.resolve(__dirname, './src/assets/styles'),
+      '@icons': path.resolve(__dirname, './src/assets/icons'),
+      '@images': path.resolve(__dirname, './src/assets/images'),
+      '@pages': path.resolve(__dirname, './src/pages'),
+      '@contexts': path.resolve(__dirname, './src/contexts')
     }
   },
   css: {
     preprocessorOptions: {
       scss: {
-        api: 'modern-compiler'
+        silenceDeprecations: ['legacy-js-api']
       }
     }
   }

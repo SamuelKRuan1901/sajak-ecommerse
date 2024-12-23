@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 export const useScrollHandling = () => {
-  const [scrollDriction, setScrollDriction] = useState(null);
+  const [scrollDirection, setScrollDirection] = useState(null);
   const previousScrollPosition = useRef();
   const [scrollPosition, setScrollPosition] = useState(null);
 
@@ -9,9 +9,9 @@ export const useScrollHandling = () => {
     const currentScrollPosition = window.pageYOffset;
 
     if (currentScrollPosition > previousScrollPosition.current) {
-      setScrollDriction('down');
+      setScrollDirection('down');
     } else if (currentScrollPosition < previousScrollPosition) {
-      setScrollDriction('up');
+      setScrollDirection('up');
     }
 
     previousScrollPosition.current =
@@ -25,7 +25,7 @@ export const useScrollHandling = () => {
   }, []);
 
   return {
-    scrollDriction,
+    scrollDirection,
     scrollPosition
   };
 };
