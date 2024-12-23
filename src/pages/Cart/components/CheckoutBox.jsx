@@ -7,7 +7,7 @@ import applePayImg from '@images/apple-pay.png';
 import aExImg from '@images/american-express.png';
 import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
-import { SideBarContext } from '@/contexts/SideBarProvider';
+import { SideBarContext } from '@contexts/SideBarProvider';
 
 const CheckoutBox = () => {
   const { cartProductList } = useContext(SideBarContext);

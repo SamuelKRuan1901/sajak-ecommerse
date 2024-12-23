@@ -9,7 +9,7 @@ import BoxIcon from '@components/Header/BoxIcon';
 import { useScrollHandling } from '@/hooks/useScrollHandling';
 import classNames from 'classnames';
 import { useContext } from 'react';
-import { SideBarContext } from '@/contexts/SideBarProvider';
+import { SideBarContext } from '@contexts/SideBarProvider';
 import Cookies from 'js-cookie';
 
 const Header = () => {
