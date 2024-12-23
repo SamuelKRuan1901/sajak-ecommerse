@@ -3,9 +3,11 @@
     "baseUrl": "./",
     "paths": {
       "@components/*": ["src/components/*"],
+      "@styles/*": ["src/assets/styles/*"],
       "@assets/*": ["src/assets/*"],
       "@icons/*": ["src/assets/icons/*"],
-      "@pages/*": ["src/pages"]
+      "@pages/*": ["src/pages/*"],
+      "@contexts/*": ["src/contexts/*"]
     }
   },
   "include": ["src/**/*"]

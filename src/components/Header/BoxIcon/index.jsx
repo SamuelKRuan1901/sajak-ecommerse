@@ -1,7 +1,7 @@
 import styles from '../styles.module.scss';
-import fbIcon from '@icons/fbicon.svg';
-import igIcon from '@icons/igicon.svg';
-import ytbIcon from '@icons/youtubeicon.svg';
+import fbIcon from '@icons/fbIcon.svg';
+import igIcon from '@icons/igIcon.svg';
+import ytbIcon from '@icons/youtubeIcon.svg';
 
 const BOxIcon = ({ type, href }) => {
   const handleRenderIcon = (type) => {

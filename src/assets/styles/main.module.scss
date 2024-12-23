@@ -1,4 +1,4 @@
-@import 'normalize.css';
-@import './variables.module';
-@import './mixins.module';
-@import './global.module';
+@use 'normalize.css' as *;
+@use './variables.module' as *;
+@use './mixins.module' as *;
+@use './global.module' as *;

@@ -4,7 +4,7 @@ import styles from './styles.module.scss';
 import ProductItemSideBar from '@components/ContentSideBar/components/ProductItemSideBar';
 import Button from '@components/Button';
 import { useContext } from 'react';
-import { SideBarContext } from '@/contexts/SideBarProvider';
+import { SideBarContext } from '@contexts/SideBarProvider';
 import { useNavigate } from 'react-router-dom';
 
 const ShoppingCart = () => {
