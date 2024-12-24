@@ -4,7 +4,18 @@ import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react()
+    // {
+    //   name: 'suppress-use-client',
+    //   transform(code, id) {
+    //     if (id.includes('react-toastify.esm.mjs')) {
+    //       return { code: code.replace(/"use client"/g, ''), map: null };
+    //     }
+    //     return { code, map: null };
+    //   }
+    // }
+  ],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
@@ -18,7 +29,8 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        api: 'modern-compiler'
+        api: 'modern-compiler', // or "modern"
+        silenceDeprecations: ['legacy-js-api']
       }
     }
   }
