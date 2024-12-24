@@ -7,8 +7,8 @@ import { useContext, useState } from 'react';
 import { ToastContext } from '@/contexts/ToastProvider';
 import { register, signIn, getInfo } from '@/apis/authService';
 import Cookies from 'js-cookie';
-import { SideBarContext } from '@/contexts/SideBarProvider';
-import { StoreContext } from '@/contexts/storeProvider';
+import { SideBarContext } from '@contexts/SideBarProvider';
+import { StoreContext } from '@contexts/storeProvider';
 
 const Login = () => {
   const [isRegister, setIsRegister] = useState(false);
@@ -81,7 +81,7 @@ const Login = () => {
       <div className={styles.title}>{isRegister ? 'REGISTER' : 'LOGIN'}</div>
       <form onSubmit={formik.handleSubmit}>
         <InputCommon
-          lable={'Email'}
+          label={'Email'}
           type={'text'}
           id={'email'}
           name={'email'}
@@ -89,7 +89,7 @@ const Login = () => {
           formik={formik}
         />
         <InputCommon
-          lable={'Password'}
+          label={'Password'}
           type={'password'}
           id={'password'}
           name={'password'}
@@ -98,7 +98,7 @@ const Login = () => {
         />
         {isRegister && (
           <InputCommon
-            lable={'Comfirm Password'}
+            label={'Confirm Password'}
             type={'password'}
             id={'CFpassword'}
             name={'CFpassword'}
@@ -107,9 +107,9 @@ const Login = () => {
           />
         )}
         {!isRegister && (
-          <div className={styles.rememberme}>
+          <div className={styles.remember}>
             <input type='checkbox' />
-            <span>Remenber me</span>
+            <span>Remember me</span>
           </div>
         )}
         <Button
