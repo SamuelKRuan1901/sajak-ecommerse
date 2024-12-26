@@ -1,5 +1,5 @@
-@use '@styles/mixins.module.scss' as *;
-@use '@styles/variables.module.scss' as *;
+@use '@/assets/styles/mixins.module.scss' as *;
+@use '@/assets/styles/variables.module.scss' as *;
 
 .container {
   @include flex_box_custom(center, center, 0px);
@@ -62,9 +62,8 @@
 
 .boxIcon {
   @include radius_common(10%);
-  @include flex_box_custom(center, center, 0px);
-  width: 26px;
-  height: 26px;
+  @include flex_box_custom(center, center, 15px);
+  width: auto;
   cursor: pointer;
 }
 

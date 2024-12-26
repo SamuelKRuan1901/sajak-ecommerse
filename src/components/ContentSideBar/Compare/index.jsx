@@ -1,9 +1,9 @@
-import HeaderSideBar from '@components/ContentSideBar/components/HeaderSideBar';
 import { TfiReload } from 'react-icons/tfi';
 import styles from './styles.module.scss';
+import { useContext } from 'react';
+import HeaderSideBar from '@components/ContentSideBar/components/HeaderSideBar';
 import ProductItemSideBar from '@components/ContentSideBar/components/ProductItemSideBar';
 import Button from '@components/Button';
-import { useContext } from 'react';
 import { SideBarContext } from '@contexts/SideBarProvider';
 
 const Compare = () => {

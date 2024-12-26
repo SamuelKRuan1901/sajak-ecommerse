@@ -1,8 +1,9 @@
 import { FaTrash } from 'react-icons/fa';
 import styles from '../styles.module.scss';
-import { deleteProductCart } from '@/apis/cartService';
 import { useContext } from 'react';
+import { deleteProductCart } from '@/apis/cartService';
 import { SideBarContext } from '@contexts/SideBarProvider';
+// import { SideBarContext } from '@/contexts/SideBarProvider';
 
 const CartProductItem = ({ Id, img, name, size, price }) => {
   const { handleGetProductsList, userId } = useContext(SideBarContext);

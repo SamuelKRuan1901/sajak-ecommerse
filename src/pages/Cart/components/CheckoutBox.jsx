@@ -1,13 +1,13 @@
-import Button from '@components/Button';
+import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
 import styles from '../styles.module.scss';
+import Button from '@components/Button';
+import { SideBarContext } from '@contexts/SideBarProvider';
 import paypalImg from '@images/paypal.png';
 import visaImg from '@images/visa.png';
 import shoppingImg from '@images/shopping.png';
 import applePayImg from '@images/apple-pay.png';
 import aExImg from '@images/american-express.png';
-import { useNavigate } from 'react-router-dom';
-import { useContext } from 'react';
-import { SideBarContext } from '@contexts/SideBarProvider';
 
 const CheckoutBox = () => {
   const { cartProductList } = useContext(SideBarContext);

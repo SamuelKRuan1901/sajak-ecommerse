@@ -1,5 +1,5 @@
-@use '@styles/mixins.module.scss' as *;
-@use '@styles/variables.module.scss' as *;
+@use 'src/assets/styles/mixins.module.scss' as *;
+@use 'src/assets/styles/variables.module.scss' as *;
 
 .container {
   width: 100%;

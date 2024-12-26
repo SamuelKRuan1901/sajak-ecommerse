@@ -1,9 +1,9 @@
-import { deleteProductCart } from '@/apis/cartService';
-import { deleteProductWishlist } from '@/apis/wishlistService';
-import { deleteProductCompare } from '@/apis/compareService';
 import styles from './styles.module.scss';
 import { TfiClose } from 'react-icons/tfi';
 import { useContext } from 'react';
+import { deleteProductCart } from '@/apis/cartService';
+import { deleteProductWishlist } from '@/apis/wishlistService';
+import { deleteProductCompare } from '@/apis/compareService';
 import { SideBarContext } from '@contexts/SideBarProvider';
 
 const ProductItemSideBar = ({ name, size, price, img, Id }) => {

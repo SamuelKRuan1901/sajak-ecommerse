@@ -1,23 +1,18 @@
 import styles from '../styles.module.scss';
-import fbIcon from '@icons/fbIcon.svg';
-import igIcon from '@icons/igIcon.svg';
-import ytbIcon from '@icons/youtubeIcon.svg';
+import { FaFacebookSquare } from 'react-icons/fa';
+import { FaYoutube } from 'react-icons/fa6';
+import { FaInstagram } from 'react-icons/fa6';
 
-const BOxIcon = ({ type, href }) => {
-  const handleRenderIcon = (type) => {
-    switch (type) {
-      case 'fb':
-        return fbIcon;
-      case 'ig':
-        return igIcon;
-      case 'youtube':
-        return ytbIcon;
-    }
-  };
-
+const BOxIcon = () => {
   return (
     <div className={styles.boxIcon}>
-      <img src={handleRenderIcon(type)} alt={type} />
+      <FaFacebookSquare
+        style={{
+          fontSize: '20px'
+        }}
+      />
+      <FaYoutube style={{ fontSize: '20px' }} />
+      <FaInstagram style={{ fontSize: '20px' }} />
     </div>
   );
 };

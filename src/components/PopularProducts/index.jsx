@@ -1,5 +1,5 @@
-import MainLayout from '@components/Layout';
 import styles from './styles.module.scss';
+import MainLayout from '@components/Layout';
 import ProductItem from '@components/ProductItem';
 
 const PopularProducts = ({ data }) => {

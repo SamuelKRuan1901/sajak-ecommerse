@@ -1,5 +1,5 @@
-import Button from '@components/Button';
 import styles from './styles.module.scss';
+import Button from '@components/Button';
 import saleOfYear1 from '@images/sale-of-year-1.jpg';
 import saleOfYear2 from '@images/sale-of-year-2.jpg';
 

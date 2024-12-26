@@ -1,9 +1,9 @@
 import { useContext, useState } from 'react';
 import styles from '../styles.module.scss';
-import { SideBarContext } from '@/contexts/SideBarProvider';
 import Cookies from 'js-cookie';
-import { StoreContext } from '@/contexts/storeProvider';
 import { useNavigate } from 'react-router-dom';
+import { SideBarContext } from '@/contexts/SideBarProvider';
+import { StoreContext } from '@/contexts/storeProvider';
 
 const Menu = ({ content, href }) => {
   const { setIsOpen, setType } = useContext(SideBarContext);

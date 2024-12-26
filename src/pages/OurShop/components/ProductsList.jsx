@@ -1,9 +1,13 @@
 import { useContext, useState } from 'react';
+import styles from '../styles.module.scss';
 import { OurShopContext } from '@contexts/OurShopProvider';
 import ProductItem from '@components/ProductItem';
-import styles from '../styles.module.scss';
 import MainLayout from '@components/Layout';
 import Button from '@components/Button';
+// import { OurShopContext } from '@/contexts/OurShopProvider';
+// import ProductItem from '@/components/ProductItem';
+// import MainLayout from '@/components/Layout';
+// import Button from '@/components/Button';
 
 const ProductsList = () => {
   const sizes = [

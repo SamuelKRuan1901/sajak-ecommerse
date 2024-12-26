@@ -1,5 +1,5 @@
-import CountdownTimer from '@components/CountdownTimer';
 import styles from './styles.module.scss';
+import CountdownTimer from '@components/CountdownTimer';
 import Button from '@components/Button';
 
 const CountdownBanner = () => {

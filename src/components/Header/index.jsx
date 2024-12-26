@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { dataBoxIcon, dataMenu } from './constants';
+import { dataMenu } from './constants';
 import styles from './styles.module.scss';
 import Menu from './Menu';
 import { TfiReload } from 'react-icons/tfi';
 import { BsHeart } from 'react-icons/bs';
 import { PiShoppingBagLight } from 'react-icons/pi';
-import BoxIcon from '@components/Header/BoxIcon';
-import { useScrollHandling } from '@/hooks/useScrollHandling';
 import classNames from 'classnames';
 import { useContext } from 'react';
-import { SideBarContext } from '@contexts/SideBarProvider';
 import Cookies from 'js-cookie';
+import BoxIcon from '@/components/Header/BoxIcon';
+import { useScrollHandling } from '@/hooks/useScrollHandling';
+import { SideBarContext } from '@contexts/SideBarProvider';
 
 const Header = () => {
   const { scrollPosition } = useScrollHandling();
@@ -52,11 +52,7 @@ const Header = () => {
     >
       <div className={styles.containerHeader}>
         <div className={styles.containerBox}>
-          <div className={styles.containerBoxIcon}>
-            {dataBoxIcon.map((item) => (
-              <BoxIcon key={item.type} type={item.type} href={item.href} />
-            ))}
-          </div>
+          <BoxIcon />
           <div className={styles.containerMenu}>
             {dataMenu.slice(0, 3).map((item) => (
               <Menu key={item.content} content={item.content} />

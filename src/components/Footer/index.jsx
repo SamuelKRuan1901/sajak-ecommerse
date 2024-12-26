@@ -1,5 +1,5 @@
-import { dataMenu } from '@components/Footer/constant';
 import styles from './styles.module.scss';
+import { dataMenu } from '@components/Footer/constant';
 import paypalImg from '@images/paypal.png';
 import visaImg from '@images/visa.png';
 import shoppingImg from '@images/shopping.png';

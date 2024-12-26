@@ -1,11 +1,11 @@
-import HeaderSideBar from '@components/ContentSideBar/components/HeaderSideBar';
 import { TfiReload } from 'react-icons/tfi';
 import styles from './styles.module.scss';
+import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import HeaderSideBar from '@components/ContentSideBar/components/HeaderSideBar';
 import ProductItemSideBar from '@components/ContentSideBar/components/ProductItemSideBar';
 import Button from '@components/Button';
-import { useContext } from 'react';
 import { SideBarContext } from '@contexts/SideBarProvider';
-import { useNavigate } from 'react-router-dom';
 
 const ShoppingCart = () => {
   const { cartProductList, setIsOpen } = useContext(SideBarContext);

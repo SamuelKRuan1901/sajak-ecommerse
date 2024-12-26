@@ -1,8 +1,9 @@
 import styles from '../styles.module.scss';
-
-import { OurShopContext } from '@contexts/OurShopProvider';
 import { useContext } from 'react';
+import { OurShopContext } from '@contexts/OurShopProvider';
 import SelectBox from '@pages/OurShop/components/SelectBox';
+// import SelectBox from './SelectBox';
+// import { OurShopContext } from '@/contexts/OurShopProvider';
 
 const Filter = () => {
   const { showOptions, sortOptions, setSortId, setShowId } =

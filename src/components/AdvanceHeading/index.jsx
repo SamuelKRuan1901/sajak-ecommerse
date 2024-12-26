@@ -1,5 +1,6 @@
-import MainLayout from '@components/Layout';
+// import MainLayout from '@components/Layout';
 import styles from './styles.module.scss';
+import MainLayout from '@/components/Layout';
 
 const AdvanceHeading = () => {
   return (

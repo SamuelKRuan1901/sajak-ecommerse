@@ -1,6 +1,5 @@
 import { useContext } from 'react';
 import styles from './styles.module.scss';
-import { SideBarContext } from '@contexts/SideBarProvider';
 import classNames from 'classnames';
 import { TfiClose } from 'react-icons/tfi';
 import Login from '@components/ContentSideBar/Login';
@@ -8,6 +7,7 @@ import Compare from '@components/ContentSideBar/Compare';
 import Wishlist from '@components/ContentSideBar/Wishlist';
 import ShoppingCart from '@components/ContentSideBar/ShoppingCart';
 import ViewProduct from '@components/ContentSideBar/ViewProduct';
+import { SideBarContext } from '@contexts/SideBarProvider';
 
 const SideBar = () => {
   const { isOpen, setIsOpen, type } = useContext(SideBarContext);

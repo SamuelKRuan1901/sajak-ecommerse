@@ -1,5 +1,6 @@
-import Stepper from '@pages/Cart/components/Stepper';
+// import Stepper from '@pages/Cart/components/Stepper';
 import styles from '../styles.module.scss';
+import Stepper from './Stepper';
 
 const Steps = () => {
   const dataSteps = [

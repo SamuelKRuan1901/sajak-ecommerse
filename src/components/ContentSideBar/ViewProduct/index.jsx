@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import styles from './styles.module.scss';
-import Button from '@components/Button';
 import cls from 'classnames';
+import Button from '@components/Button';
 import { SideBarContext } from '@contexts/SideBarProvider';
 import { addProductToCart } from '@/apis/cartService';
 import { ToastContext } from '@contexts/ToastProvider';

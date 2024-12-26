@@ -1,12 +1,12 @@
 import styles from './styles.module.scss';
-import rotateIcon from '@icons/rotateIcon.svg';
-import heartIcon from '@icons/heartIcon.svg';
 import { IoMdEye } from 'react-icons/io';
-import boxIcon from '@icons/boxIcon.svg';
-import Button from '@components/Button';
 import { useContext, useState } from 'react';
 import cls from 'classnames';
 import Cookies from 'js-cookie';
+import { FaArrowsRotate } from 'react-icons/fa6';
+import { FaHeart } from 'react-icons/fa';
+import { FaBox } from 'react-icons/fa';
+import Button from '@components/Button';
 import { ToastContext } from '@contexts/ToastProvider';
 import { SideBarContext } from '@contexts/SideBarProvider';
 import { addProductToCart } from '@/apis/cartService';
@@ -33,6 +33,7 @@ const ProductItem = ({
   const userId = Cookies.get('userId');
   const handleChooseSize = (size) => {
     setChooseSize(size);
+    setIsLoading(false);
   };
 
   const handleViewProduct = async () => {
@@ -150,20 +151,16 @@ const ProductItem = ({
         <img className={styles.showWhenHover} src={preSrc} alt='image' />
         <div className={styles.showFuncWhenHover}>
           <div className={styles.boxIcon}>
-            <img src={boxIcon} alt='Icon' />
+            <FaBox style={{ fontSize: '20px' }} />
           </div>
-          <div className={styles.boxIcon}>
-            <img
-              src={heartIcon}
-              alt='heartIcon'
-              onClick={handleAddToWishlist}
-            />
+          <div className={styles.boxIcon} onClick={handleAddToWishlist}>
+            <FaHeart style={{ fontSize: '20px' }} />
           </div>
           <div className={styles.boxIcon} onClick={handleAddToCompare}>
-            <img src={rotateIcon} alt='rotateIcon' />
+            <FaArrowsRotate style={{ fontSize: '20px' }} />
           </div>
           <div className={styles.boxIcon} onClick={handleViewProduct}>
-            <IoMdEye style={{ fontSize: '20px' }} />
+            <IoMdEye style={{ fontSize: '23px' }} />
           </div>
         </div>
       </div>

@@ -1,12 +1,12 @@
-import HeaderSideBar from '@components/ContentSideBar/components/HeaderSideBar';
 import { BsHeart } from 'react-icons/bs';
 import styles from './styles.module.scss';
+import { useContext, useState } from 'react';
+import Cookies from 'js-cookie';
+import HeaderSideBar from '@components/ContentSideBar/components/HeaderSideBar';
 import ProductItemSideBar from '@components/ContentSideBar/components/ProductItemSideBar';
 import Button from '@components/Button';
-import { useContext, useState } from 'react';
 import { SideBarContext } from '@contexts/SideBarProvider';
 import { ToastContext } from '@contexts/ToastProvider';
-import Cookies from 'js-cookie';
 import { moveWishlistProductsToCart } from '@/apis/wishlistService';
 
 const Wishlist = () => {
