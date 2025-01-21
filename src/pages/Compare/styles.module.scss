@@ -1,0 +1,52 @@
+@use '@/assets/styles/mixins.module.scss' as *;
+
+.container {
+  margin: 80px 0;
+  @include flex_box_custom(center, center, 10px);
+  flex-direction: column;
+  padding: 40px;
+}
+
+.compareItemContainer {
+  @include flex_box_custom(start, start, 10px);
+  background-color: #e0dfdcbc;
+  position: relative;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  img {
+    width: 250px;
+  }
+
+  .detailContainer {
+    @include flex_box_custom(start, start, 10px);
+    flex-direction: column;
+    padding: 10px;
+
+    .nameStyle {
+      font-size: 20px;
+      font-weight: 400;
+    }
+    .sizeStyle {
+      background-color: #979999;
+      color: #ebf2f2;
+      padding: 5px;
+      border-radius: 10px;
+    }
+    .priceStyle {
+      color: #565757;
+    }
+    q .descStyle {
+      color: #212222;
+      line-height: 1.5;
+    }
+  }
+  .deleteBtn {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+  }
+}

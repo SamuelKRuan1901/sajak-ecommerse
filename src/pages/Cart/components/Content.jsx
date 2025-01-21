@@ -3,9 +3,6 @@ import { useContext } from 'react';
 import CartProductItem from '@pages/Cart/components/CartProductItem';
 import CheckoutBox from '@pages/Cart/components/CheckoutBox';
 import { SideBarContext } from '@contexts/SideBarProvider';
-// import CartProductItem from './CartProductItem';
-// import CheckoutBox from './CheckoutBox';
-// import { SideBarContext } from '@/contexts/SideBarProvider';
 
 const Content = () => {
   const { cartProductList } = useContext(SideBarContext);

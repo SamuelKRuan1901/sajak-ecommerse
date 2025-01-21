@@ -39,7 +39,7 @@ const ShoppingCart = () => {
       <div className={styles.boxBtn}>
         <div className={styles.total}>
           <span>SUBTOTAL</span>
-          <span>${subtotal}</span>
+          <span>${parseFloat(subtotal).toFixed(2)}</span>
         </div>
         <Button content={'View Cart'} onClick={handleNavigateToCart} />
         <Button content={'Checkout'} />

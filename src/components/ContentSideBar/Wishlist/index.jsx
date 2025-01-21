@@ -50,7 +50,7 @@ const Wishlist = () => {
             key={item.wishlist_id}
             Id={item.wishlist_id}
             name={item.name}
-            size={item.size}
+            size={item.product_size}
             price={item.price}
             img={item.image1}
           />

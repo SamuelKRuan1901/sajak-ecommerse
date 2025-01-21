@@ -9,9 +9,18 @@ const getProductCompare = async () => {
   return res.data;
 };
 
+const moveCompareProductsToCart = async () => {
+  return await axiosClient.post('api/compare/move_to_cart');
+};
+
 const deleteProductCompare = async (compareId) => {
   console.log(compareId);
   return await axiosClient.delete(`/api/compare/${compareId}`);
 };
 
-export { addProductToCompare, getProductCompare, deleteProductCompare };
+export {
+  addProductToCompare,
+  getProductCompare,
+  deleteProductCompare,
+  moveCompareProductsToCart
+};

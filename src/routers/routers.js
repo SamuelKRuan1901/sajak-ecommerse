@@ -16,5 +16,17 @@ export const routers = [
   {
     path: '/cart',
     component: lazy(() => import('@pages/Cart'))
+  },
+  {
+    path: '/compare',
+    component: lazy(() => import('@pages/Compare'))
+  },
+  {
+    path: '/search',
+    component: lazy(() => import('@pages/Search'))
+  },
+  {
+    path: '/checkout',
+    component: lazy(() => import('@pages/Checkout'))
   }
 ];

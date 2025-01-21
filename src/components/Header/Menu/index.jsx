@@ -34,9 +34,13 @@ const Menu = ({ content, href }) => {
     if (content === 'Our Shop') {
       navigate('/shop');
     }
+
+    if (content === 'Search') {
+      navigate('/search');
+    }
   };
 
-  const handleLogingOut = () => {
+  const handleLoggingOut = () => {
     Cookies.remove('token');
     Cookies.remove('userId');
     setIsShowSubMenu(false);
@@ -55,7 +59,7 @@ const Menu = ({ content, href }) => {
         <div
           className={styles.subMenu}
           onMouseLeave={() => setIsShowSubMenu(false)}
-          onClick={handleLogingOut}
+          onClick={handleLoggingOut}
         >
           Logout
         </div>

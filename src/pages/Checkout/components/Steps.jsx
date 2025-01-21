@@ -17,7 +17,7 @@ const Steps = () => {
                 key={index}
                 number={item.num}
                 content={item.content}
-                isDisabled={item.num !== 1}
+                isDisabled={item.num !== 2}
               />
               {item.num !== dataSteps.length && <div className={styles.line} />}
             </>

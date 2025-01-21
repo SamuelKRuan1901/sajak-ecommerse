@@ -23,15 +23,18 @@ const CheckoutBox = () => {
         <hr />
         <div className={styles.subtotal}>
           <span>Subtotal</span>
-          <span>${subtotal}</span>
+          <span>${parseFloat(subtotal).toFixed(2)}</span>
         </div>
         <div className={styles.total}>
           <span>TOTAL</span>
-          <span>${subtotal}</span>
+          <span>${parseFloat(subtotal).toFixed(2)}</span>
         </div>
         <hr />
         <div className={styles.btnBox}>
-          <Button content={'PROCEED TO CHECKOUT'} />
+          <Button
+            content={'PROCEED TO CHECKOUT'}
+            onClick={() => navigate('/checkout')}
+          />
           <Button
             content={'Continue Shopping'}
             onClick={() => navigate('/shop')}

@@ -11,11 +11,13 @@ import Cookies from 'js-cookie';
 import BoxIcon from '@/components/Header/BoxIcon';
 import { useScrollHandling } from '@/hooks/useScrollHandling';
 import { SideBarContext } from '@contexts/SideBarProvider';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const { scrollPosition } = useScrollHandling();
   const [fixedPosition, setFixedPosition] = useState(false);
   const userId = Cookies.get('userId');
+  const navigate = useNavigate();
 
   const {
     setIsOpen,
@@ -60,7 +62,9 @@ const Header = () => {
           </div>
         </div>
         <div>
-          <h1>SajaK.</h1>
+          <h1 style={{ cursor: 'pointer' }} onClick={() => navigate('/')}>
+            SajaK.
+          </h1>
         </div>
         <div className={styles.containerBox}>
           <div className={styles.containerMenu}>
